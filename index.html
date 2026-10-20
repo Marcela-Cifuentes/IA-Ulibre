@@ -84,7 +84,7 @@ th,td{border-bottom:1px solid var(--line);padding:8px;text-align:left}
 .sr{position:absolute;left:-9999px}
 #theme{background:rgba(255,255,255,.16);color:#fff;border:1.5px solid rgba(255,255,255,.55);min-height:36px;padding:4px 12px;font-size:.85rem}
 .ph{display:flex;align-items:center;gap:8px;margin:22px 0 4px!important;font-size:1.05rem!important;color:var(--mc,var(--ink))}
-.pn{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--mc);color:#fff;font-size:.85rem;font-weight:700}
+.pn{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--mc,var(--brand));color:#fff;font-size:.85rem;font-weight:700}
 html[data-theme="dark"] .pn{color:#0d1420}
 .prog{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 10px}
 .pg{font-size:.8rem;padding:4px 10px;border-radius:999px;border:1.5px solid var(--line);color:var(--muted);background:var(--card)}
@@ -139,20 +139,17 @@ tr.bad td{background:var(--badbg)!important}
 .pool.over,.slot.over{border-color:var(--brand);background:var(--soft)}
 .ptit{font-size:.8rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
 .chip{border:2px solid var(--brand);background:var(--card);border-radius:10px;padding:8px 10px;margin:6px 0;font-size:.9rem;cursor:grab;touch-action:none;line-height:1.35}
-.chip.w{border-color:var(--m-re)}
 .chip.sel{background:var(--soft);box-shadow:0 0 0 3px var(--brand)}
 .chip.lift{opacity:.35}
 .chip.ghost{position:fixed;z-index:200;pointer-events:none;box-shadow:0 8px 22px rgba(0,0,0,.3);opacity:.95;margin:0}
-.dmet{display:grid;grid-template-columns:1fr;gap:8px;border:1.5px solid var(--line);border-left:6px solid var(--mc);border-radius:12px;padding:10px;margin:10px 0;background:var(--card)}
+.dmet{display:grid;grid-template-columns:1fr;gap:8px;border:1.5px solid var(--line);border-left:6px solid var(--line);border-radius:12px;padding:10px;margin:10px 0;background:var(--card)}
 @media(min-width:640px){.dmet{grid-template-columns:150px 1fr 1fr}}
-.dn{font-weight:700;color:var(--mc);display:flex;flex-direction:column;gap:2px}.dn small{color:var(--muted);font-weight:500;font-size:.78rem}
-.slot{min-height:56px;border:2px dashed color-mix(in srgb,var(--mc) 55%,var(--line));border-radius:10px;padding:4px 6px;display:flex;align-items:center}
+.dn{font-weight:700;color:var(--ink);display:flex;flex-direction:column;gap:2px}.dn small{color:var(--muted);font-weight:500;font-size:.78rem}
+.slot{min-height:56px;border:2px dashed var(--line);border-radius:10px;padding:4px 6px;display:flex;align-items:center}
 .slot .ph2{color:var(--muted);font-size:.82rem}
 .slot.full .ph2{display:none}.slot.full{border-style:solid}
 .slot .chip{margin:0;width:100%}
 .slot.bad{border-color:var(--bad);background:var(--badbg)}
-.chuleta{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:6px;margin-bottom:8px;box-shadow:0 4px 10px rgba(0,0,0,.06)}
-.ch{white-space:nowrap;font-size:.75rem;font-weight:700;color:var(--mc);border:1.5px solid var(--mc);border-radius:999px;padding:2px 9px;background:color-mix(in srgb,var(--mc) 10%,var(--card))}
 .tcards{display:grid;gap:10px;margin:8px 0}
 .tcard{border:2px solid var(--mc);border-radius:12px;background:color-mix(in srgb,var(--mc) 8%,var(--card));overflow:hidden}
 .thead{all:unset;display:block;width:100%;box-sizing:border-box;padding:10px 12px;cursor:pointer}
@@ -169,11 +166,25 @@ html[data-theme="dark"] .cn.r{color:#0d1420}
 .cal-q{font-weight:650;margin:8px 0}
 .info.bien{border-left-color:var(--ok);background:var(--okbg)}.info.mal{border-left-color:var(--bad);background:var(--badbg)}
 .pills{display:flex;gap:8px;flex-wrap:wrap}
-.pill{background:transparent;color:var(--mc);border:2px solid var(--mc);border-radius:999px;padding:6px 14px;min-height:40px;font-weight:600;font-size:.9rem}
+.pill{--mc:var(--brand);background:transparent;color:var(--mc);border:2px solid var(--mc);border-radius:999px;padding:6px 14px;min-height:40px;font-weight:600;font-size:.9rem}
 .pill.on{background:var(--mc);color:#fff}
 html[data-theme="dark"] .pill.on{color:#0d1420}
 .recu{margin-top:8px;font-size:.85rem;color:var(--muted)}
-.item[data-sel="o1"]{border-left:6px solid var(--m-ex)}.item[data-sel="o2"]{border-left:6px solid var(--m-pr)}.item[data-sel="o3"]{border-left:6px solid var(--m-re)}
+.frase{line-height:2;margin:4px 0 10px}
+.seg{cursor:pointer;border-bottom:2px dashed var(--brand);padding:2px 4px;border-radius:5px}
+.seg:hover{background:var(--soft)}
+.seg.on{background:var(--brand);color:#fff;border-bottom-style:solid}
+html[data-theme="dark"] .seg.on{color:#0d1420}
+.locked .seg{pointer-events:none}
+button.ghost{background:transparent;color:var(--muted);border:1.5px dashed var(--line)}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:8px 0}
+.fl{border:2px solid var(--line);border-radius:12px;padding:8px 10px;position:relative;background:var(--card);display:flex;flex-direction:column;gap:2px}
+.fl.aqui{border-color:var(--brand)}.fl.colab{border-color:var(--m-re);border-style:dashed}
+.fl .fn{width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--card);font-weight:800;font-size:.8rem;display:grid;place-items:center}
+.fl small{color:var(--muted);font-size:.8rem}
+.anota-mock{border:2px dashed var(--line);border-radius:12px;padding:8px 12px;margin:8px 0;background:var(--soft)}
+.anota-mock pre{margin:4px 0 0;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82rem;white-space:pre-wrap;color:var(--ink)}
+.am-t{font-size:.82rem;color:var(--muted)}
 .locked .pill{pointer-events:none}
 .revbox{margin:8px 0}.revmsg .callout{margin:8px 0 0}
 .item.good,.q.good,.mcard.good,.dmet.good,.field.good{border-color:var(--ok)}
@@ -201,7 +212,7 @@ tr.good td:first-child{box-shadow:inset 4px 0 0 var(--ok)}
 'use strict';
 /* ===== CONFIGURACIÓN DEL DOCENTE ===== */
 var API_URL = 'https://script.google.com/macros/s/AKfycbyyL489SqHSieG9VCQ8oswLQJjh6OQ0jdD4hZJoyFozwyOymexn6hr7QwhIIJhhMFn2nA/exec';        // URL de la aplicación web de Apps Script (termina en /exec)
-var NOTEBOOK_URL = 'https://colab.research.google.com/drive/1iur-SzIiUQ5CiQY7aoxI9uYiMhfE_Mln?usp=sharing';   // enlace de Colab con el notebook del laboratorio
+var NOTEBOOK_URL = '';   // enlace de Colab con el notebook del laboratorio
 var STORE_KEY = 'ml_lab_v1';
 /* ===== Tema claro / oscuro ===== */
 (function () {
@@ -217,73 +228,72 @@ var STORE_KEY = 'ml_lab_v1';
 
 /* ===== Contenido visible (sin respuestas: las respuestas viven en el servidor) ===== */
 var TIPOS = [['o1', 'Supervisado'], ['o2', 'No supervisado'], ['o3', 'Por refuerzo']];
-var PISTAS = [['p1', 'Hay respuestas conocidas (etiquetas)'], ['p2', 'Solo se buscan patrones'], ['p3', 'Hay premios y castigos']];
 var ESC = [
-  ['t1', 'Un filtro de spam se entrena con miles de correos que los usuarios ya marcaron como "spam" o "no spam".'],
-  ['t2', 'Una app agrupa a sus usuarios según sus hábitos de uso, sin saber de antemano cuántos grupos hay ni cómo se llaman.'],
-  ['t3', 'Un robot de bodega prueba rutas: gana puntos al entregar un paquete y pierde puntos si choca.'],
-  ['t4', 'Un modelo predice si un servidor va a fallar, usando un historial donde cada caso ya dice "falló" o "no falló".'],
-  ['t5', 'Un banco busca transacciones muy distintas a las demás, sin tener ejemplos marcados de fraude.'],
-  ['t6', 'Un programa juega ajedrez contra sí mismo millones de veces y ajusta su estrategia según gane o pierda.'],
-  ['t7', 'Un modelo aprende a recomendar jugadas a partir de miles de partidas de expertos, donde cada jugada elegida está registrada.']
+  ['t1', ['Con miles de correos que los usuarios ya marcaron como "spam" o "no spam",', 'se entrena un filtro', 'que decide si un correo nuevo es basura.']],
+  ['t2', ['Una app quiere conocer a su público:', 'agrupa a sus usuarios según sus hábitos de uso,', 'sin saber de antemano cuántos grupos hay ni cómo se llaman.']],
+  ['t3', ['Un robot de bodega prueba rutas:', 'gana puntos al entregar un paquete y pierde puntos si choca,', 'hasta quedarse con la ruta más conveniente.']],
+  ['t4', ['Un modelo predice si un servidor va a fallar', 'usando un historial donde cada caso ya dice "falló" o "no falló",', 'para avisar al equipo de soporte.']],
+  ['t5', ['Un banco quiere detectar transacciones muy distintas a las demás', 'sin tener ejemplos marcados de fraude', 'y luego las revisa un analista.']],
+  ['t6', ['Un programa ajusta su estrategia según gane o pierda', 'cuando juega ajedrez contra sí mismo', 'millones de veces seguidas.']],
+  ['t7', ['Un modelo aprende a recomendar jugadas', 'a partir de miles de partidas de expertos', 'en las que cada jugada elegida está registrada.']]
 ];
 var QS = {
   2: [
     ['q1', 'Con k=1 el modelo acierta los 40 de 40 tickets de entrenamiento. ¿Por qué?', [
-      ['c1', 'Porque k=1 es el mejor valor de k para cualquier problema.'],
-      ['c2', 'Porque cada ticket de entrenamiento es su propio vecino más cercano (distancia 0) y se "recuerda" a sí mismo.'],
-      ['c3', 'Porque los datos de entrenamiento no tienen ruido ni casos difíciles.']]],
+      ['c1', 'Porque k=1 es el mejor valor de k que existe y por eso el modelo nunca se equivoca con ningún dato.'],
+      ['c2', 'Porque cada ticket es su propio vecino más cercano, a distancia 0.'],
+      ['c3', 'Porque los tickets de entrenamiento son fáciles y no incluyen ningún caso difícil o ambiguo para el modelo.']]],
     ['q2', 'Con k=1 aciertas mucho más en entrenamiento que en prueba. ¿Qué te dice eso?', [
-      ['c1', 'Que hay un error en el código: ambos aciertos deberían ser iguales.'],
-      ['c2', 'Que los tickets de prueba están mal etiquetados.'],
-      ['c3', 'Que el modelo se ajustó demasiado a los casos que ya vio y generaliza peor con casos nuevos.']]],
+      ['c1', 'Que el código tiene un error, porque ambos aciertos deberían salir iguales.'],
+      ['c2', 'Que los tickets de prueba fueron etiquetados mal por quien los marcó.'],
+      ['c3', 'Que el modelo se ajustó demasiado a lo que ya vio (sobreajuste) y generaliza peor con casos nuevos.']]],
     ['q3', 'Para saber qué tan bueno será el modelo en la vida real, ¿con qué datos debes medirlo?', [
-      ['c1', 'Con datos que no vio al entrenarse; si no, el resultado se ve mejor de lo que será.'],
-      ['c2', 'Con los mismos datos de entrenamiento, porque son los más confiables.'],
-      ['c3', 'Da igual con cuáles: el resultado siempre es el mismo.']]]
+      ['c1', 'Con datos que no vio al entrenarse; si no, el resultado se ve mejor de lo real.'],
+      ['c2', 'Con los mismos datos de entrenamiento, porque son los que el modelo conoce mejor que ninguno.'],
+      ['c3', 'Con cualquier grupo de datos: siempre sale igual.']]]
   ],
   3: [
     ['q1', 'El grupo con más descargas y uso medio, ¿cómo lo describirías?', [
-      ['c1', 'Coleccionistas: bajan muchas cosas, aunque no las usen tanto.'],
-      ['c2', 'Ocasionales: usan poco y descargan poco.'],
-      ['c3', 'Lectores: usan mucho pero descargan poco.']]],
+      ['c1', 'Coleccionistas: descargan mucho aunque usen poco la app.'],
+      ['c2', 'Ocasionales: usan poco la app y descargan poco durante toda la semana, casi sin interactuar.'],
+      ['c3', 'Lectores: usan la app muchas horas al día, pero descargan muy pocas cosas durante el mes.']]],
     ['q2', '¿Cómo sabe k-medias que los grupos que encontró son "correctos"?', [
-      ['c1', 'Los compara con una columna de etiquetas correctas, como en el caso de los tickets.'],
-      ['c2', 'No tiene respuestas correctas: agrupa por cercanía y una persona interpreta y nombra los grupos.'],
-      ['c3', 'Le pregunta a cada usuario si quedó en el grupo adecuado.']]]
+      ['c1', 'Las compara con una columna de etiquetas correctas, como en los tickets.'],
+      ['c2', 'No hay respuesta correcta: agrupa por cercanía y una persona interpreta y nombra cada grupo.'],
+      ['c3', 'Le pregunta a cada usuario si quedó en el grupo que le corresponde.']]]
   ],
   4: [
     ['q1', '¿Quién le dijo al robot qué ruta tomar?', [
-      ['c1', 'El programador, que escribió la ruta paso a paso.'],
-      ['c2', 'Un conjunto de rutas de ejemplo marcadas como correctas.'],
-      ['c3', 'Nadie: la ruta salió de probar muchas veces y quedarse con lo que dio más recompensa.']]],
+      ['c1', 'El programador, que escribió la ruta paso a paso en el código.'],
+      ['c2', 'Un conjunto de rutas de ejemplo marcadas antes como correctas.'],
+      ['c3', 'Nadie: salió de probar muchas veces y quedarse con lo que dio más recompensa.']]],
     ['q2', 'Al poner castigo 0 en las zonas calientes, la ruta cambió. ¿Por qué?', [
-      ['c1', 'Porque cambió lo que "vale" pasar por esas casillas, y el robot busca la mayor recompensa total.'],
-      ['c2', 'Porque el robot se equivocó al entrenar.'],
-      ['c3', 'Porque con castigo 0 el robot deja de aprender.']]],
+      ['c1', 'Cambió lo que vale pasar por esas casillas; el robot busca la mayor recompensa.'],
+      ['c2', 'El robot se equivocó al entrenar y por eso eligió otra ruta distinta esta vez, sin ninguna razón.'],
+      ['c3', 'Con castigo 0 el robot deja de aprender por completo y simplemente camina en línea recta.']]],
     ['q3', '¿Qué riesgo tiene entrenar un agente por refuerzo directamente en un sistema real?', [
-      ['c1', 'Ninguno: probar acciones no cuesta nada.'],
-      ['c2', 'Para aprender debe probar acciones, y probar en un sistema real puede causar daños o costos; por eso se entrena en simulación.'],
+      ['c1', 'Ninguno: probar acciones nuevas no cuesta nada y siempre mejora el aprendizaje del agente.'],
+      ['c2', 'Probar acciones en un sistema real puede causar daños o costos; por eso se simula.'],
       ['c3', 'Que el agente se aprenda las respuestas de memoria.']]]
   ]
 };
 QS[6] = [
   ['q1', 'El filtro manda a spam un correo importante de tu docente. ¿Qué casilla es?', [
-    ['c1', 'Verdadero positivo (VP): el filtro acertó.'],
-    ['c2', 'Falso positivo (FP): era normal y el filtro dijo spam.'],
-    ['c3', 'Falso negativo (FN): era spam y el filtro dijo normal.']]],
+    ['c1', 'Verdadero positivo (VP): el filtro acertó al detectar un spam de verdad y lo mandó a spam.'],
+    ['c2', 'Falso positivo (FP): era normal y el filtro dijo que era spam.'],
+    ['c3', 'Falso negativo (FN): era spam y el filtro se equivocó diciendo que era un correo normal.']]],
   ['q2', 'Un sistema detecta fraude bancario. ¿Qué error es más grave y qué métrica conviene vigilar?', [
-    ['c1', 'El falso positivo (bloquear una compra buena); la precisión.'],
-    ['c2', 'Ninguno; basta con mirar la exactitud.'],
-    ['c3', 'El falso negativo (fraude que pasa sin detectarse); el recall.']]],
+    ['c1', 'El falso positivo (bloquear una compra buena); conviene vigilar la precisión del sistema.'],
+    ['c2', 'Ninguno de los dos pesa más; basta mirar la exactitud.'],
+    ['c3', 'El falso negativo (fraude sin detectar); conviene vigilar el recall.']]],
   ['q3', 'Un modelo responde siempre "Normal" en 100 correos donde solo 5 son spam. ¿Qué pasa con sus métricas?', [
     ['c1', 'Exactitud 0.95 pero recall 0: parece bueno y no detecta ni un spam.'],
-    ['c2', 'Exactitud 0.05 y recall 1.'],
-    ['c3', 'Exactitud 0.95 y recall 0.95.']]],
+    ['c2', 'Exactitud 0.05 y recall 1: casi nunca acierta, pero atrapa todo el spam que llega.'],
+    ['c3', 'Exactitud 0.95 y recall 0.95: acierta casi siempre y también atrapa el spam.']]],
   ['q4', '¿Para qué sirve el F1?', [
     ['c1', 'Es el promedio simple de la exactitud y la especificidad.'],
     ['c2', 'Combina precisión y recall en un solo número que baja si cualquiera de los dos es bajo.'],
-    ['c3', 'Reemplaza a la matriz de confusión, que ya no hace falta.']]]
+    ['c3', 'Reemplaza a la matriz de confusión: ya no hace falta calcular nada más.']]]
 ];
 var METS = [
   ['ex', 'Exactitud (accuracy)', 'De todos los correos, ¿cuántos clasificó bien el filtro?', '(VP + VN) / total', ['vp', 'vn'], ['vp', 'vn', 'fp', 'fn'],
@@ -299,17 +309,17 @@ var METS = [
 ];
 var CASOS5 = [
   ['a', 'Mesa de ayuda: predecir cuántos tickets llegarán mañana, con 3 años de historial de tickets por día.',
-    [['x1', 'Un historial con el valor real que ocurrió cada día'], ['x2', 'Solo registros de uso, sin ningún resultado asociado'], ['x3', 'Un simulador con recompensas y castigos']],
-    [['y1', 'Que se expongan datos personales de los grupos formados'], ['y2', 'Que el sistema cause daños mientras prueba acciones'], ['y3', 'Que el futuro deje de parecerse al pasado (una campaña o un sistema nuevo lo desajusta)']]],
+    [['x1', 'Un historial con el valor real que ocurrió cada día de esos años'], ['x2', 'Solo registros de uso del sistema, sin ningún resultado asociado'], ['x3', 'Un simulador donde probar acciones con recompensas y castigos']],
+    [['y1', 'Que se expongan los datos personales de las personas agrupadas por el modelo'], ['y2', 'Que el sistema cause daños o costos mientras prueba acciones nuevas en vivo'], ['y3', 'Que el futuro deje de parecerse al pasado y la predicción se desajuste']]],
   ['b', 'Plataforma virtual: agrupar a los estudiantes según cómo la usan (ingresos, tiempos, entregas) para diseñar apoyos distintos.',
-    [['x1', 'Un historial donde cada estudiante ya trae su grupo correcto asignado'], ['x2', 'Registros de uso (ingresos, tiempos, entregas) sin etiquetas'], ['x3', 'Un simulador con recompensas y castigos']],
-    [['y1', 'Privacidad y estigmatización: los nombres de los grupos pueden etiquetar a personas'], ['y2', 'Que el sistema cause caídas mientras prueba acciones'], ['y3', 'Que el futuro deje de parecerse al pasado']]],
+    [['x1', 'Un historial donde cada estudiante ya trae su grupo correcto asignado'], ['x2', 'Registros de uso (ingresos, tiempos, entregas) sin ninguna etiqueta'], ['x3', 'Un simulador donde probar acciones con recompensas y castigos']],
+    [['y1', 'Privacidad y estigmatización: nombrar los grupos puede etiquetar a las personas'], ['y2', 'Que el sistema cause caídas o gastos mientras prueba acciones en producción'], ['y3', 'Que el futuro deje de parecerse al pasado y el modelo quede desajustado']]],
   ['c', 'Nube: ajustar automáticamente cuántos servidores hay encendidos. No existe un historial de "la decisión correcta"; el sistema recibe castigos por caídas y por gasto innecesario.',
-    [['x1', 'Un historial donde cada situación ya trae la decisión correcta marcada'], ['x2', 'Registros de carga sin etiquetas, para agruparlos'], ['x3', 'Un entorno (idealmente un simulador) donde probar acciones y recibir recompensas y castigos']],
-    [['y1', 'Que se expongan datos personales de los usuarios'], ['y2', 'Que, al explorar en producción, el sistema cause caídas o gastos'], ['y3', 'Que el modelo se ajuste demasiado a los datos de entrenamiento']]]
+    [['x1', 'Un historial donde cada situación ya trae la decisión correcta marcada'], ['x2', 'Registros de carga de los servidores sin etiquetas, solo para agruparlos'], ['x3', 'Un entorno simulado donde probar acciones y recibir recompensas y castigos']],
+    [['y1', 'Que se expongan los datos personales de los usuarios del servicio en la nube'], ['y2', 'Que, al explorar en producción, el sistema cause caídas o gastos innecesarios'], ['y3', 'Que el modelo se ajuste demasiado a los datos de entrenamiento que ya vio']]]
 ];
 var TITULOS = {
-  1: ['Misión 1 · ¿Qué tipo de aprendizaje es?', '15 min · sin notebook', 'Repasa lo esencial, entra en calor y clasifica cada escenario con su pista.'],
+  1: ['Misión 1 · ¿Qué tipo de aprendizaje es?', '15 min · sin notebook', 'Repasa lo esencial, entra en calor y clasifica cada escenario señalando la frase que lo decide.'],
   2: ['Misión 2 · Supervisado: tickets urgentes', '35 min · con notebook', 'Entrena un clasificador sobre tickets de una mesa de ayuda y analiza cuándo funciona de verdad.'],
   3: ['Misión 3 · No supervisado: tipos de usuario', '30 min · con notebook', 'Deja que el algoritmo agrupe usuarios y decide cuántos grupos tienen sentido.'],
   4: ['Misión 4 · Refuerzo: robot en cuadrícula', '30 min · con notebook', 'Cambia las recompensas y mira cómo cambia lo que aprende el robot.'],
@@ -432,6 +442,8 @@ function missionView(app, m) {
   var hintBox = el('div', { id: 'hints' });
   var chk = el('button', { text: 'Comprobar' });
   chk.addEventListener('click', function () { guard(chk, function () { return doCheck(m, out); }); });
+  var sk = el('button', { class: 'ghost', text: 'Entregar así y seguir' });
+  sk.addEventListener('click', function () { guard(sk, function () { return doCheck(m, out, 'skip'); }); });
   var hb = el('button', { class: 'sec', text: 'Pedir pista (cuenta 1)' });
   hb.addEventListener('click', function () { guard(hb, async function () {
     var r = await api('hint', { m: m });
@@ -441,7 +453,7 @@ function missionView(app, m) {
     paintHints(hintBox, m); save();
     if (r.none) toast('Ya viste las 3 pistas de esta misión.');
   }); });
-  card.appendChild(el('div', { class: 'acts' }, [chk, hb]));
+  card.appendChild(el('div', { class: 'acts' }, [chk, hb, sk]));
   card.appendChild(hintBox); card.appendChild(out);
   app.appendChild(card);
   paintHints(hintBox, m);
@@ -486,6 +498,12 @@ function buildNB(form, m) {
                            : el('span', { class: 'meta', text: 'Tu docente te indicará el enlace del notebook.' });
   var cp = el('button', { class: 'sec', type: 'button', text: 'Copiar token' });
   cp.addEventListener('click', function () { try { navigator.clipboard.writeText(tokenDe(m)).then(function () { toast('Token copiado.'); }); } catch (e) { toast('Selecciona y copia el token a mano.'); } });
+  var FL = [['Aquí', 'Copia tu token'], ['Colab', 'Pégalo y presiona ▶'], ['Colab', 'Ejecuta, mira las tablas y juega con "Explora"'], ['Colab', 'Busca el cuadro ANOTA'], ['Aquí', 'Escribe los números']];
+  form.appendChild(el('div', { class: 'flow' }, FL.map(function (f, i) {
+    return el('div', { class: 'fl ' + (f[0] === 'Aquí' ? 'aqui' : 'colab') }, [el('span', { class: 'fn', text: String(i + 1) }), el('b', { text: f[0] }), el('small', { text: f[1] })]);
+  })));
+  form.appendChild(el('div', { class: 'anota-mock' }, [el('div', { class: 'am-t', text: 'Así se ve el cuadro que debes buscar en Colab (los ## son tus números):' }),
+    el('pre', { text: 'ANOTA EN EL LABORATORIO (Misión ' + m + ')\n' + c.campos.map(function (f) { return '  ' + f[1] + ': ##'; }).join('\n') + (c.sel ? '\n  ' + c.sel[1] + ': ##' : '') })]));
   form.appendChild(el('p', { class: 'meta', text: 'Son 5 pasos cortos. Hazlos en orden.' }));
   form.appendChild(el('ol', { class: 'pasos' }, [
     el('li', {}, [el('b', { text: 'Abre el notebook ' }), 'con el botón de abajo. Si Colab pide "Conectar", acéptalo.']),
@@ -529,7 +547,7 @@ var MSG = {
   fin: ['Misión superada. Hoy te ganaste un respiro y un tinto.', 'Listo: otra misión al bolsillo. Tu cerebro ya entrenó una época más.', 'Superada. Tu tasa de aprendizaje va en subida.']
 };
 function azarMsg(a) { return a[Math.floor(Math.random() * a.length)]; }
-function hostFor(k) { return $('f-' + k) || $('qb-' + k) || $('it-' + k) || $('mc-' + k) || ($(k) && $(k).closest('td')); }
+function hostFor(k) { return $('f-' + k) || $('qb-' + k) || $('it-' + k) || $('mc-' + k) || ($(k) && ($(k).closest('td') || $(k).closest('.item'))); }
 function limpiarMarcas() {
   [].forEach.call(document.querySelectorAll('#form .bad, #form .good'), function (n) { n.classList.remove('bad'); n.classList.remove('good'); });
   [].forEach.call(document.querySelectorAll('#form .explica'), function (n) { n.remove(); });
@@ -560,7 +578,11 @@ function revBtn(m, keys, label) {
   return el('div', { class: 'revbox' }, [b, msg]);
 }
 /* ===== Misión 1: recordatorios + práctica interactiva ===== */
-var TCOL = { o1: 'var(--m-ex)', o2: 'var(--m-pr)', o3: 'var(--m-re)' };
+var TCOL = { o1: 'var(--brand)', o2: 'var(--brand)', o3: 'var(--brand)' };
+function barajarCon(a, clave) {
+  var h = 7, i, t = String(st.sid || 'x') + clave; for (i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) % 2147483647;
+  a = a.slice(); for (i = a.length - 1; i > 0; i--) { h = (h * 48271 + 11) % 2147483647; var j = h % (i + 1), x = a[i]; a[i] = a[j]; a[j] = x; } return a;
+}
 var TCUE = { o1: 'Supervisado: hay respuestas conocidas (etiquetas).', o2: 'No supervisado: nadie etiquetó; solo se buscan patrones.', o3: 'Por refuerzo: un agente prueba y recibe premios y castigos.' };
 var TARJ = [
   ['o1', 'Supervisado', 'Aprende con las respuestas a la vista.',
@@ -598,10 +620,10 @@ function tarjetas() {
 function camino() {
   var d = el('div', { class: 'camino' });
   d.appendChild(el('div', { class: 'cn q', text: '1. ¿Los datos ya traen la respuesta correcta?' }));
-  d.appendChild(el('div', { class: 'cr' }, [el('span', { class: 'si', text: 'Sí' }), el('div', { class: 'cn r', style: '--mc:var(--m-ex)', text: 'Supervisado' })]));
+  d.appendChild(el('div', { class: 'cr' }, [el('span', { class: 'si', text: 'Sí' }), el('div', { class: 'cn r', text: 'Supervisado' })]));
   d.appendChild(el('div', { class: 'cn q', text: '2. Si no: ¿hay un agente que prueba y recibe premios o castigos?' }));
-  d.appendChild(el('div', { class: 'cr' }, [el('span', { class: 'si', text: 'Sí' }), el('div', { class: 'cn r', style: '--mc:var(--m-re)', text: 'Por refuerzo' })]));
-  d.appendChild(el('div', { class: 'cr' }, [el('span', { class: 'si no', text: 'No' }), el('div', { class: 'cn r', style: '--mc:var(--m-pr)', text: 'No supervisado (solo patrones)' })]));
+  d.appendChild(el('div', { class: 'cr' }, [el('span', { class: 'si', text: 'Sí' }), el('div', { class: 'cn r', text: 'Por refuerzo' })]));
+  d.appendChild(el('div', { class: 'cr' }, [el('span', { class: 'si no', text: 'No' }), el('div', { class: 'cn r', text: 'No supervisado (solo patrones)' })]));
   return d;
 }
 function calentamiento() {
@@ -618,8 +640,8 @@ function calentamiento() {
       var b = el('button', { class: 'sec sm', type: 'button', text: 'Otra ronda' }); b.addEventListener('click', nuevaRonda); btns.appendChild(b); return;
     }
     frase.textContent = '¿De qué tipo es? "' + lista[cur][0] + '"'; score.textContent = 'Frase ' + (cur + 1) + ' de ' + lista.length + ' · Aciertos: ' + ac;
-    TIPOS.forEach(function (o) {
-      var b = el('button', { class: 'pill', type: 'button', style: '--mc:' + TCOL[o[0]], text: o[1] });
+    TIPOS.slice().sort(function () { return Math.random() - 0.5; }).forEach(function (o) {
+      var b = el('button', { class: 'pill', type: 'button', text: o[1] });
       b.addEventListener('click', function () {
         var ok = o[0] === lista[cur][1]; if (ok) ac++;
         fb.className = 'info ' + (ok ? 'bien' : 'mal');
@@ -633,44 +655,52 @@ function calentamiento() {
   box.appendChild(el('p', {}, ['Cinco frases rápidas para entrar en calor. ', bold('No se califica'), ' y no son los escenarios de la misión.']));
   box.appendChild(frase); box.appendChild(btns); box.appendChild(fb); box.appendChild(score); nuevaRonda(); return box;
 }
-function pillGroup(id, opts, item) {
+function pillGroup(id, opts) {
   var s = sel(id, opts); s.style.display = 'none'; s.className = 'oculto';
   var g = el('div', { class: 'pills', role: 'group' }, [s]);
-  opts.forEach(function (o) {
-    var b = el('button', { class: 'pill', type: 'button', 'data-v': o[0], style: '--mc:' + TCOL['o' + o[0].slice(1)], text: o[1] });
+  barajarCon(opts, id).forEach(function (o) {
+    var b = el('button', { class: 'pill', type: 'button', 'data-v': o[0], text: o[1] });
     b.addEventListener('click', function () { s.value = o[0]; s.dispatchEvent(new Event('change', { bubbles: true })); pintarM1(); });
     g.appendChild(b);
   });
   return g;
+}
+function fraseGroup(id, segs) {
+  var s = sel(id, segs.map(function (t, i) { return ['s' + (i + 1), t]; })); s.style.display = 'none'; s.className = 'oculto';
+  var p = el('p', { class: 'frase' }, [s]);
+  segs.forEach(function (t, i) {
+    var v = 's' + (i + 1);
+    var b = el('span', { class: 'seg', role: 'button', tabindex: '0', 'data-v': v, text: t });
+    var go = function () { s.value = v; s.dispatchEvent(new Event('change', { bubbles: true })); pintarM1(); };
+    b.addEventListener('click', go);
+    b.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    p.appendChild(b); p.appendChild(document.createTextNode(' '));
+  });
+  return p;
 }
 function pintarM1() {
   var n = 0, tot = ESC.length;
   ESC.forEach(function (e) {
     var it = $('it-' + e[0]); if (!it) return;
     var t = $('t_' + e[0]), p = $('p_' + e[0]);
-    [].forEach.call(it.querySelectorAll('.pill'), function (b) {
+    [].forEach.call(it.querySelectorAll('.pill,.seg'), function (b) {
       var s = b.parentNode.querySelector('select'); b.classList.toggle('on', s.value === b.getAttribute('data-v'));
     });
-    it.setAttribute('data-sel', t.value || '');
     if (t.value && p.value) n++;
   });
   var pr = $('m1prog'); if (pr) pr.textContent = 'Escenarios respondidos: ' + n + ' de ' + tot;
 }
 function buildM1(form) {
-  form.appendChild(el('div', { class: 'chuleta' }, [
-    el('span', { class: 'ch', style: '--mc:var(--m-ex)', text: 'Supervisado: respuestas' }),
-    el('span', { class: 'ch', style: '--mc:var(--m-pr)', text: 'No supervisado: patrones' }),
-    el('span', { class: 'ch', style: '--mc:var(--m-re)', text: 'Refuerzo: premios' })]));
-  form.appendChild(sec('1 · Lo que debes tener presente (toca cada tarjeta)', el('div', {}, [tarjetas(), el('p', { class: 'meta', text: 'Cómo decidir en tres preguntas:' }), camino()]), true, 'var(--m-ex)'));
-  form.appendChild(sec('2 · Calentamiento (no se califica)', calentamiento(), false, 'var(--m-re)'));
-  form.appendChild(el('h3', { class: 'ph', style: '--mc:var(--m-pr)' }, [el('span', { class: 'pn', text: '3' }), ' Clasifica los 7 escenarios']));
-  form.appendChild(el('p', { class: 'meta', text: 'Para cada escenario elige el tipo de aprendizaje y la pista que lo decide.' }));
+  form.appendChild(sec('1 · Lo que debes tener presente (toca cada tarjeta)', el('div', {}, [tarjetas(), el('p', { class: 'meta', text: 'Cómo decidir en tres preguntas:' }), camino()]), true));
+  form.appendChild(sec('2 · Calentamiento (no se califica)', calentamiento(), false));
+  form.appendChild(el('h3', { class: 'ph' }, [el('span', { class: 'pn', text: '3' }), ' Clasifica los 7 escenarios']));
+  form.appendChild(el('div', { class: 'info' }, [bold('Haz dos cosas en cada escenario. '), '(1) Toca la parte de la frase que te da la pista decisiva. (2) Elige el tipo de aprendizaje. Las opciones cambian de orden en cada escenario: lee antes de tocar.']));
   form.appendChild(el('div', { class: 'sumcheck', id: 'm1prog' }));
   ESC.forEach(function (e, i) {
     form.appendChild(el('div', { class: 'item', id: 'it-' + e[0] }, [
-      el('p', {}, [bold((i + 1) + '. '), e[1]]),
-      el('label', { class: 'f', text: 'Tipo de aprendizaje' }), pillGroup('t_' + e[0], TIPOS),
-      el('label', { class: 'f', text: 'Pista que lo decide' }), pillGroup('p_' + e[0], PISTAS),
+      el('p', { class: 'meta' }, [bold('Escenario ' + (i + 1))]),
+      el('label', { class: 'f', text: '1. Toca la frase que decide' }), fraseGroup('p_' + e[0], e[1]),
+      el('label', { class: 'f', text: '2. ¿Qué tipo de aprendizaje es?' }), pillGroup('t_' + e[0], TIPOS),
       revBtn(1, [e[0]], 'Revisar este escenario')
     ]));
   });
@@ -689,8 +719,6 @@ var CHIPS_D = [['r1', 'Cuando dice "spam", ¿qué tan seguido tiene razón?'], [
 var CHIPS_W = [['i1', 'Cuando dejar pasar un caso cuesta: fraude, enfermedad, un ataque en la red.'], ['i2', 'Cuando cada falsa alarma cuesta: que lo marcado como spam sea de verdad spam.'],
   ['i3', 'Cuando necesitas equilibrio entre falsas alarmas y casos que se escapan.'], ['i4', 'Cuando las dos clases son parecidas en cantidad; engaña si una es muy rara.'],
   ['i5', 'Cuando quieres saber qué tan bien se respetan los casos normales.']];
-/* Ejemplo resuelto con otros números: VP 6, FN 3, FP 2, VN 9 (20 correos) */
-var EJ = { vp: 6, fn: 3, fp: 2, vn: 9 };
 var ERR = {
   ex: 'Error típico: dividir entre 10 cuando el total no es 10, o contar solo los VP y olvidar los VN.',
   pr: 'Error típico: dividir entre todos los spam reales (eso es el recall). Aquí se divide entre las veces que el filtro dijo "spam": VP + FP.',
@@ -707,11 +735,6 @@ function calcM(c) {
   return { ex: r(c.vp + c.vn, T), pr: p, re: rc, es: r(c.vn, c.vn + c.fp), f1: r(2 * c.vp, 2 * c.vp + c.fp + c.fn) };
 }
 function fmt(v) { return v == null ? '—' : v.toFixed(2); }
-function sustituir(id, c) {
-  var T = c.vp + c.vn + c.fp + c.fn;
-  return { ex: '(' + c.vp + ' + ' + c.vn + ') / ' + T, pr: c.vp + ' / (' + c.vp + ' + ' + c.fp + ')', re: c.vp + ' / (' + c.vp + ' + ' + c.fn + ')',
-    es: c.vn + ' / (' + c.vn + ' + ' + c.fp + ')', f1: '2 × ' + c.vp + ' / (2 × ' + c.vp + ' + ' + c.fp + ' + ' + c.fn + ')' }[id];
-}
 function metBar(id, v) {
   var b = el('div', { class: 'bar' }, [el('span', { style: 'width:' + (v == null ? 0 : Math.round(v * 100)) + '%' })]);
   return el('div', { class: 'barrow', style: '--mc:var(--m-' + id + ')' }, [el('b', { text: NOMBRE[id] }), b, el('span', { class: 'bv', text: fmt(v) })]);
@@ -830,18 +853,16 @@ function buildM6(form, data) {
   form.appendChild(revBtn(6, ['vp', 'fp', 'fn', 'vn'], 'Revisar paso 2'));
 
   form.appendChild(el('h3', { class: 'ph', style: '--mc:var(--m-re)' }, [el('span', { class: 'pn', text: '3' }), ' Calcula cada métrica']));
-  form.appendChild(el('p', { class: 'meta', text: 'Cada tarjeta tiene su color. En la mini-matriz, lo de relleno fuerte va arriba de la división; lo de borde punteado se suma abajo. Escribe el resultado con 2 decimales (ejemplo: 0.75).' }));
+  form.appendChild(el('p', { class: 'meta', text: 'Usa la fórmula de cada tarjeta con los números de tu matriz. En la mini-matriz, lo de relleno fuerte va arriba de la división; lo de borde punteado se suma abajo. Escribe el resultado con 2 decimales (ejemplo: 0.75).' }));
   MAPA.forEach(function (id) {
-    var ej = calcM(EJ);
     var ayuda = el('details', { class: 'mini-help' }, [el('summary', { text: 'Explícame esta métrica' })]);
     ayuda.appendChild(el('p', {}, [bold('¿Qué cuenta? '), QUE[id]]));
-    ayuda.appendChild(el('p', {}, [bold('Ejemplo resuelto con otros números '), '(VP = 6, FN = 3, FP = 2, VN = 9): ' + sustituir(id, EJ) + ' = ' + fmt(ej[id]) + '.']));
+    ayuda.appendChild(el('p', {}, [bold('Cómo se usa la fórmula: '), 'cambia cada sigla (VP, VN, FP, FN) por el número de tu matriz, haz primero lo que está entre paréntesis y luego divide.']));
     ayuda.appendChild(el('p', { class: 'meta', text: ERR[id] }));
     form.appendChild(el('div', { class: 'mcard', id: 'mc-' + id, style: '--mc:var(--m-' + id + ')' }, [
       el('h4', {}, [el('span', { class: 'dot' }), NOMBRE[id]]), el('p', { class: 'q1', text: QUE[id] }),
       el('div', {}, [el('span', { class: 'fm', text: DEFS[id][0] })]),
       mxTable(false, true, id), ayuda,
-      el('div', { class: 'sumcheck' }, ['Con tus números: ', el('b', { id: 'sub-' + id, text: 'completa tu matriz' })]),
       el('div', { class: 'field', id: 'f-' + id }, [el('label', { class: 'f', for: id, text: 'Resultado (2 decimales)' }), el('input', { type: 'number', id: id, 'data-k': id, step: '0.01', min: '0', max: '1', inputmode: 'decimal' })]),
       revBtn(6, [id], 'Revisar esta métrica'),
       el('div', { id: 'res-' + id })
@@ -849,7 +870,7 @@ function buildM6(form, data) {
   });
 
   form.appendChild(el('h3', { class: 'ph', style: '--mc:var(--m-es)' }, [el('span', { class: 'pn', text: '4' }), ' Arrastra y une']));
-  form.appendChild(el('p', { class: 'meta', text: 'Arrastra cada tarjeta hasta la métrica que le corresponde: lo que responde y cuándo importa. En el celular puedes tocar una tarjeta y luego tocar el hueco. Doble toque para devolverla.' }));
+  form.appendChild(el('p', { class: 'meta', text: 'Arrastra cada tarjeta al hueco de la métrica que crees que corresponde: lo que responde y cuándo importa. Experimenta: puedes moverlas cuantas veces quieras antes de revisar. En el celular toca una tarjeta y luego el hueco. Doble toque para devolverla.' }));
   var barajar = function (a) { var h = 0, i; for (i = 0; i < (st.sid || 'x').length; i++) h = (h * 31 + st.sid.charCodeAt(i)) % 9973; a = a.slice();
     for (i = a.length - 1; i > 0; i--) { h = (h * 48271 + 11) % 2147483647; var j = h % (i + 1), x = a[i]; a[i] = a[j]; a[j] = x; } return a; };
   var poolD = el('div', { class: 'pool', 'data-kind': 'd' }, [el('div', { class: 'ptit', text: 'Qué responde' })]);
@@ -862,7 +883,7 @@ function buildM6(form, data) {
     var sl = function (kind, ph) {
       return el('div', { class: 'slot', id: 'f-' + kind + '_' + id, 'data-kind': kind, 'data-slot': kind + '_' + id }, [el('span', { class: 'ph2', text: ph }), el('input', { type: 'hidden', 'data-k': kind + '_' + id, value: '' })]);
     };
-    form.appendChild(el('div', { class: 'dmet', id: 'it-d_' + id, style: '--mc:var(--m-' + id + ')' }, [el('div', { class: 'dn' }, [el('span', { class: 'dot' }), NOMBRE[id], el('small', { text: DEFS[id][0] })]),
+    form.appendChild(el('div', { class: 'dmet', id: 'it-d_' + id }, [el('div', { class: 'dn' }, [NOMBRE[id], el('small', { text: DEFS[id][0] })]),
       sl('d', 'Suelta aquí lo que responde'), sl('w', 'Suelta aquí cuándo importa')]));
   });
   var lim = el('button', { class: 'sec sm', type: 'button', text: 'Devolver todas las tarjetas' });
@@ -885,7 +906,6 @@ function updM6() {
   var form = $('form'); if (!form || !$('prog')) return;
   var c = conteoM6(), ok = c.vp != null && c.fp != null && c.fn != null && c.vn != null, tot = (c.vp || 0) + (c.fp || 0) + (c.fn || 0) + (c.vn || 0);
   var sc = $('sumcheck'); if (sc) { sc.textContent = 'Suma: ' + tot + (ok ? (tot === 10 ? ' ✓' : ' (deben sumar 10)') : ''); sc.classList.toggle('good', ok && tot === 10); }
-  MAPA.forEach(function (id) { var n = $('sub-' + id); if (n) n.textContent = ok ? sustituir(id, c) : 'completa tu matriz'; });
   var sels = form.querySelectorAll('select[data-k^="r"]'), p1 = [].every.call(sels, function (s) { return s.value; });
   var p2 = ok && tot === 10, p3 = MAPA.every(function (id) { return $(id).value !== ''; });
   var p4 = [].every.call(form.querySelectorAll('.slot input'), function (i) { return i.value; });
@@ -963,19 +983,20 @@ function initDnd(form) {
     if ((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('chip')) { e.preventDefault(); var c = e.target; if (sel === c) clearSel(); else { clearSel(); sel = c; c.classList.add('sel'); } }
   });
 }
+function pct(v) { return Math.round(v * 100) + ' %'; }
 var SIG = {
-  ex: function (c, v) { return 'Acertó ' + (c.vp + c.vn) + ' de ' + (c.vp + c.vn + c.fp + c.fn) + ' correos.'; },
-  pr: function (c, v) { return 'Dijo "spam" ' + (c.vp + c.fp) + ' veces y acertó ' + c.vp + '.'; },
-  re: function (c, v) { return 'Había ' + (c.vp + c.fn) + ' spam y atrapó ' + c.vp + '.'; },
-  es: function (c, v) { return 'Había ' + (c.vn + c.fp) + ' correos normales y respetó ' + c.vn + '.'; },
-  f1: function (c, v) { var m = calcM(c); return 'Mezcla precisión (' + fmt(m.pr) + ') y recall (' + fmt(m.re) + ').'; }
+  ex: function (c, v) { return 'Clasificó bien el ' + pct(v) + ' de los correos.'; },
+  pr: function (c, v) { return 'Cuando dijo "spam", acertó el ' + pct(v) + ' de las veces.'; },
+  re: function (c, v) { return 'Atrapó el ' + pct(v) + ' de los spam que había.'; },
+  es: function (c, v) { return 'Dejó en paz al ' + pct(v) + ' de los correos normales.'; },
+  f1: function (c, v) { return 'Equilibrio entre precisión y recall: ' + fmt(v) + '.'; }
 };
 function revealM6(q) {
   var c = { vp: q.vp, fp: q.fp, fn: q.fn, vn: q.vn }, m = calcM(c);
   MAPA.forEach(function (id) {
     var host = $('res-' + id); if (!host || m[id] == null) return;
     host.innerHTML = '';
-    var r = el('div', { class: 'res' }, [bold('Resultado: ' + sustituir(id, c) + ' = ' + fmt(m[id]) + ' (' + Math.round(m[id] * 100) + ' %). '), SIG[id](c, m[id])]);
+    var r = el('div', { class: 'res' }, [bold('Resultado ' + fmt(m[id]) + '. '), SIG[id](c, m[id])]);
     host.appendChild(r); host.appendChild(metBar(id, null));
     var sp = host.querySelector('.bar span'); setTimeout(function () { sp.style.width = Math.round(m[id] * 100) + '%'; }, 60);
     host.querySelector('.bv').textContent = fmt(m[id]);
@@ -1007,12 +1028,47 @@ function gather(m) {
   });
   return q;
 }
-async function doCheck(m, out) {
+function accionesFin(m, forced) {
+  var next = el('button', { text: m < 6 ? 'Siguiente misión' : 'Ver resumen' });
+  next.addEventListener('click', function () { st.view = m < 6 ? 'm' : 'summary'; st.cur = m < 6 ? m + 1 : 6; save(); render(); window.scrollTo(0, 0); });
+  var acts = [next];
+  if ([2, 3, 4, 6].indexOf(m) >= 0) {
+    var pr = el('button', { class: 'sec', type: 'button', text: forced ? 'Volver a intentar con datos nuevos' : 'Practicar con datos nuevos' });
+    pr.addEventListener('click', function () { guard(pr, async function () {
+      var o = await api('practice', { m: m });
+      if (!o.s) { toast('No se pudo preparar la práctica.'); return; }
+      var keepStars = st.stars.slice(); applyState(o); st.stars = keepStars.map(function (v, i) { return Math.max(v, o.stars[i] || 0); });
+      st.drafts[m] = {}; delete st.hints[m]; st.view = 'm'; st.cur = m; save(); render(); window.scrollTo(0, 0);
+      toast('Datos nuevos listos. Tu mejor resultado se conserva.');
+    }); });
+    acts.push(pr);
+  }
+  return { acts: acts, next: next };
+}
+function cerrarForm() {
+  $('form').classList.add('locked');
+  [].forEach.call($('form').querySelectorAll('.revbox button'), function (b) { b.disabled = true; });
+  [].forEach.call($('form').querySelectorAll('input,select'), function (n) { n.disabled = true; });
+}
+async function doCheck(m, out, op) {
   var q = gather(m);
-  var r = await api('check', q);
+  if (op === 'skip' && !confirm('¿Entregar esta misión así? Se cierra con 0 estrellas y verás qué estaba mal y por qué. En las misiones con datos podrás volver a intentarla con datos nuevos.')) return;
+  var r = await api(op || 'check', q);
   out.innerHTML = '';
   limpiarMarcas();
   if (!r.s) { out.appendChild(el('div', { class: 'callout bad', text: 'No se pudo calificar (' + r.e + '). Recarga la página e inténtalo de nuevo.' })); return; }
+  if (r.forced) {
+    st.passed[m - 1] = true; if (r.st) applyState(r.st);
+    (r.bad || []).forEach(function (k) { var n = hostFor(k); if (n) n.classList.add('bad'); });
+    var ex0 = r.expl || {};
+    Object.keys(ex0).forEach(function (k) { var h0 = $('qb-' + k) || $('it-' + k); if (h0 && !h0.querySelector(':scope > .explica')) h0.appendChild(el('div', { class: 'explica', text: ex0[k] })); });
+    var fa = accionesFin(m, true);
+    out.appendChild(el('div', { class: 'callout warn' }, [el('b', { text: 'Entregada con ' + r.pending + ' por corregir. ' }),
+      'Es tu decisión y queda registrada: esta misión cuenta con 0 estrellas por ahora. Lo marcado en rojo tiene su explicación para que te la lleves.',
+      el('div', { class: 'acts' }, fa.acts)]));
+    save(); cerrarForm(); var f0 = document.querySelector('#form .bad'); if (f0) f0.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
   if (!r.ok) {
     (r.bad || []).forEach(function (k) { var n = hostFor(k); if (n) n.classList.add('bad'); });
     var n = (r.bad || []).length;
@@ -1032,27 +1088,12 @@ async function doCheck(m, out) {
   var all = r.all || {};
   var ul = el('ul'); Object.keys(all).forEach(function (k) { ul.appendChild(el('li', { text: all[k] })); });
   box.appendChild(el('div', { class: 'explica' }, [el('b', { text: 'Para llevarte: ' }), ul]));
-  var next = el('button', { text: m < 6 ? 'Siguiente misión' : 'Ver resumen' });
-  next.addEventListener('click', function () { st.view = m < 6 ? 'm' : 'summary'; st.cur = m < 6 ? m + 1 : 6; save(); render(); window.scrollTo(0, 0); });
-  var acts = [next];
-  if ([2, 3, 4, 6].indexOf(m) >= 0) {
-    var pr = el('button', { class: 'sec', type: 'button', text: 'Practicar con datos nuevos' });
-    pr.addEventListener('click', function () { guard(pr, async function () {
-      var o = await api('practice', { m: m });
-      if (!o.s) { toast('No se pudo preparar la práctica.'); return; }
-      var keepStars = st.stars.slice(); applyState(o); st.stars = keepStars.map(function (v, i) { return Math.max(v, o.stars[i] || 0); });
-      st.drafts[m] = {}; delete st.hints[m]; st.view = 'm'; st.cur = m; save(); render(); window.scrollTo(0, 0);
-      toast('Datos nuevos listos. Tu mejor resultado se conserva.');
-    }); });
-    acts.push(pr);
-  }
+  var fa2 = accionesFin(m, false), next = fa2.next;
   box.appendChild(el('div', { class: 'meta', text: 'Practicar te da datos distintos para reforzar. Nunca baja tu nota: se conserva el mejor resultado.' }));
-  box.appendChild(el('div', { class: 'acts' }, acts));
+  box.appendChild(el('div', { class: 'acts' }, fa2.acts));
   out.appendChild(box); save();
-  $('form').classList.add('locked');
-  [].forEach.call($('form').querySelectorAll('.revbox button'), function (b) { b.disabled = true; });
   if (m === 6) revealM6(q);
-  [].forEach.call($('form').querySelectorAll('input,select'), function (n) { n.disabled = true; });
+  cerrarForm();
   next.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
