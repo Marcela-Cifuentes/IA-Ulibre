@@ -566,7 +566,7 @@ var TARJ = [
   ['o1', 'Supervisado', 'Aprende con las respuestas a la vista.',
     ['Se reconoce por: ', 'cada ejemplo ya trae su respuesta correcta (etiqueta).'],
     ['Ejemplo: ', 'predecir si un préstamo se pagará, con un historial de préstamos ya resueltos.'],
-    ['Ojo: ', 'que un sistema "juegue" o "decida" no lo vuelve refuerzo. Mira de dónde viene la respuesta que usa para aprender.'],
+    ['Ojo: ', 'no te guíes por una palabra suelta (predecir, agrupar, jugar). Lee con qué datos cuenta el modelo.'],
     ['Se mide: ', 'comparando con las respuestas correctas (aciertos).']],
   ['o2', 'No supervisado', 'Nadie le dice qué es correcto.',
     ['Se reconoce por: ', 'los datos no traen etiquetas; solo se buscan patrones o grupos.'],
@@ -651,8 +651,7 @@ function pintarM1() {
     [].forEach.call(it.querySelectorAll('.pill'), function (b) {
       var s = b.parentNode.querySelector('select'); b.classList.toggle('on', s.value === b.getAttribute('data-v'));
     });
-    it.setAttribute('data-sel', t.value || ''); var rec = it.querySelector('.recu');
-    rec.textContent = t.value ? 'Recuerda → ' + TCUE[t.value] : 'Elige un tipo y una pista.';
+    it.setAttribute('data-sel', t.value || '');
     if (t.value && p.value) n++;
   });
   var pr = $('m1prog'); if (pr) pr.textContent = 'Escenarios respondidos: ' + n + ' de ' + tot;
@@ -665,14 +664,13 @@ function buildM1(form) {
   form.appendChild(sec('1 · Lo que debes tener presente (toca cada tarjeta)', el('div', {}, [tarjetas(), el('p', { class: 'meta', text: 'Cómo decidir en tres preguntas:' }), camino()]), true, 'var(--m-ex)'));
   form.appendChild(sec('2 · Calentamiento (no se califica)', calentamiento(), false, 'var(--m-re)'));
   form.appendChild(el('h3', { class: 'ph', style: '--mc:var(--m-pr)' }, [el('span', { class: 'pn', text: '3' }), ' Clasifica los 7 escenarios']));
-  form.appendChild(el('p', { class: 'meta', text: 'Para cada escenario elige el tipo de aprendizaje y la pista que lo decide. Debajo de cada uno verás un recordatorio.' }));
+  form.appendChild(el('p', { class: 'meta', text: 'Para cada escenario elige el tipo de aprendizaje y la pista que lo decide.' }));
   form.appendChild(el('div', { class: 'sumcheck', id: 'm1prog' }));
   ESC.forEach(function (e, i) {
     form.appendChild(el('div', { class: 'item', id: 'it-' + e[0] }, [
       el('p', {}, [bold((i + 1) + '. '), e[1]]),
       el('label', { class: 'f', text: 'Tipo de aprendizaje' }), pillGroup('t_' + e[0], TIPOS),
       el('label', { class: 'f', text: 'Pista que lo decide' }), pillGroup('p_' + e[0], PISTAS),
-      el('div', { class: 'recu' }),
       revBtn(1, [e[0]], 'Revisar este escenario')
     ]));
   });
